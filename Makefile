@@ -3,8 +3,8 @@
 
 .PHONY: all clean starlight send
 
-S2VER ?= 100
-S2VERSTR ?= 1.0.0
+S2VER ?= 130
+S2VERSTR ?= 1.3.0
 S2ROMTYPE ?= US
 
 # Edit this line to enable FTP connection with "make send".
@@ -20,10 +20,10 @@ starlight:
 starlight_patch_$(S2VER)/*.ips: patches/*.slpatch patches/configs/$(S2VER).config patches/maps/$(S2VER)/*.map \
 								build$(S2VER)/$(shell basename $(CURDIR))$(S2VER).map scripts/genPatch.py
 	@rm -f starlight_patch_$(S2VER)/*.ips
-	python3 scripts/genPatch.py $(S2VER)
+	python scripts/genPatch.py $(S2VER)
 
 send: all
-	python3.7 scripts/sendPatch.py $(IP) $(S2ROMTYPE) $(S2VER)
+	python scripts/sendPatch.py $(IP) $(S2ROMTYPE) $(S2VER)
 
 clean:
 	$(MAKE) clean -f MakefileNSO

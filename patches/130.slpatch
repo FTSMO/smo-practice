@@ -48,3 +48,22 @@ StageScene::control+18:
 // toggle bowser skip
 004B581C:
     bl isDefeatKoopaLv1Var
+
+// Wiggler.
+000A46EC:
+    bl getMofumofuTarget
+000A4698:
+    bl isPatternReverse
+
+
+// better input
+0093FBF0:
+    bl fgetNpadStatesHandheld
+0093FC08:
+    bl fgetNpadStatesDual
+0093FC20:
+    bl fgetNpadStatesFullKey
+0093FC38:
+    bl fgetNpadStatesJoyLeft
+0093FC50:
+    bl fgetNpadStatesJoyRight
