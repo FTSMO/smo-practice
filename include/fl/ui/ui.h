@@ -66,6 +66,8 @@ namespace ui {
         bool disableAutoSave = false;
         bool skipBowser = false;
         bool disablePuppet = false;
+        bool overrideBowserHat0 = false;
+        bool reloadDUP = false;
 
         bool isModeDiverOrJungleGymRom = false;
         bool isModeDiverRom = false;
